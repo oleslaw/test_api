@@ -27,16 +27,20 @@ class ContactImportView(APIView):
             )
 
         contacts_to_create = []
-        errors = []
         for idx, row in enumerate(rows, start=1):
             serializer = ContactSerializer(data=row)
             if serializer.is_valid():
                 contacts_to_create.append(Contact(**serializer.validated_data))
             else:
-                errors.append({"row": idx, "errors": serializer.errors, "data": row})
-
-        if errors:
-            return Response({"errors": errors}, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    {
+                        "error": "Invalid row",
+                        "row": idx,
+                        "errors": serializer.errors,
+                        "data": row,
+                    },
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
 
         try:
             with transaction.atomic():
