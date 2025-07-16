@@ -19,9 +19,6 @@ venv/
 # VS Code
 .vscode/
 
-# Ruff/migrations
-migrations/
-
 # OS files
 .DS_Store
 Thumbs.db
