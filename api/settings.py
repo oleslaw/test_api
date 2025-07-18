@@ -91,13 +91,13 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://red-d1s05fh5pdvs739oo4dg:6379/1",
+        "LOCATION": os.environ.get("REDIS_URL", "redis://localhost:6379/1"),
         "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
     }
 }
 
-CELERY_BROKER_URL = "redis://red-d1s05fh5pdvs739oo4dg:6379/0"
-CELERY_RESULT_BACKEND = "redis://red-d1s05fh5pdvs739oo4dg:6379/0"
+CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://localhost:6379/0")
+CELERY_RESULT_BACKEND = os.environ.get("CELERY_RESULT_BACKEND", "redis://localhost:6379/0")
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 # Bitcoin and Exchange Rate Settings
