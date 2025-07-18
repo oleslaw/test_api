@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "f1183f6b-3c3c-4dd6-97ea-71b9771cbf3b",
+		"name": "Test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46824628"
+	},
+	"item": [
+		{
+			"name": "Bitcoin Conversion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://test-api-yi69.onrender.com/bitcoin/convert/?source_currency=EUR&target_currency=USD",
+					"protocol": "https",
+					"host": [
+						"test-api-yi69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"bitcoin",
+						"convert",
+						""
+					],
+					"query": [
+						{
+							"key": "source_currency",
+							"value": "EUR",
+							"description": "Source currency for BTC price"
+						},
+						{
+							"key": "target_currency",
+							"value": "USD",
+							"description": "Target currency"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact Import",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "jhEWn5dEs/contacts.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-api-yi69.onrender.com/contacts/import/",
+					"protocol": "https",
+					"host": [
+						"test-api-yi69",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"contacts",
+						"import",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

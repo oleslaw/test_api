@@ -1,8 +1,10 @@
-from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
+from django.core.management.base import BaseCommand
+
 
 class Command(BaseCommand):
     help = "Create initial users"
+    # Used only to create superuser on demo environment
 
     def handle(self, *args, **kwargs):
         if not User.objects.filter(username="admin").exists():
