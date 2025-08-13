@@ -3,15 +3,6 @@
 
 A Django REST API project with endpoints for Bitcoin conversion and contact import.
 
-## Assignment Coverage
-
-This project was built as part of the Kolleno backend coding challenge. Out of three possible tasks, I implemented:
-
-- Task Two: Multi-Currency Bitcoin Conversion API
-- Task Three: CSV Data Import API
-
-Task One (VirusTotal URL Scanner) was not implemented, as only two tasks were required.
-
 ## Requirements
 
 - Python 3.11+
